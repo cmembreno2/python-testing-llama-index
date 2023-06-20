@@ -6,7 +6,7 @@ from langchain import OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 def query_custom_llm(prompt):
-    documents =  SimpleDirectoryReader('data').load_data()
+    documents =  SimpleDirectoryReader('./data').load_data()
     llm_predictor = LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
     service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor)
     index = VectorStoreIndex.from_documents(documents, service_context=service_context)
