@@ -161,3 +161,4 @@ cython_debug/
 /bin
 /include
 lib64
+/share
